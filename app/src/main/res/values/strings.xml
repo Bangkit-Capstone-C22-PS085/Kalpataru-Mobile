@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Kalpataru</string>
+    <string name="onboarding_title_1">Gabung Bersama Kami!</string>
+    <string name="onboarding_desc_1">Mari gabung bersama kami untuk bersama-sama membantu melestarikan kelestarian lingkungan kita!</string>
+    <string name="onboarding_title_2">Jangan Buang Sampah Kamu!</string>
+    <string name="onboarding_desc_2">Kami siap menampung sampah anda. Kami siap meluncur ke lokasi kamu untuk mengambil sampah kamu!</string>
+    <string name="onboarding_title_3">Jadikan Sampah Kamu Lebih Bernilai!</string>
+    <string name="onboarding_desc_3">Daripada sampah anda buang cuma cuma, kami siap mengubah sampah anda menjadi sesuatu yang lebih bernilai!</string>
+    <string name="onboarding_title_4">Beli Produk Recycle Kami!</string>
+    <string name="onboarding_desc_4">Mari wujudkan ekosistem pengelolaan sampah menjadi lebih bernilai dengan membeli olahan sampah recycle dari kami!</string>
+</resources>
