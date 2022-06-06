@@ -9,4 +9,9 @@
     <string name="onboarding_title_4">Beli Produk Recycle Kami!</string>
     <string name="onboarding_desc_4">Mari wujudkan ekosistem pengelolaan sampah menjadi lebih bernilai dengan membeli olahan sampah recycle dari kami!</string>
     <string name="start_now">Mulai Sekarang!</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_sell">Jual</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_profile">Profil</string>
 </resources>
