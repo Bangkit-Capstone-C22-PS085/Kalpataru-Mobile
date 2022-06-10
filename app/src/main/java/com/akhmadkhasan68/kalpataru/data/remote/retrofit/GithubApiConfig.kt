@@ -2,7 +2,6 @@ package com.akhmadkhasan68.kalpataru.data.remote.retrofit
 
 import androidx.viewbinding.BuildConfig
 import com.akhmadkhasan68.kalpataru.model.UserPreference
-import com.example.submissionfundamentalandroid2.data.remote.retrofit.GithubApiService
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
@@ -13,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class GithubApiConfig {
     companion object{
-        private const val BASE_URL = "https://story-api.dicoding.dev/v1/"
+        private const val BASE_URL = "http://192.168.1.6:3000/api/"
 
         fun getGithubApiServices(pref: UserPreference? = null): GithubApiService {
             val loggingInterceptor = if(BuildConfig.DEBUG){

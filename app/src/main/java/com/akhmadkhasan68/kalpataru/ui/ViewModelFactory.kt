@@ -3,6 +3,9 @@ package com.akhmadkhasan68.kalpataru.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.akhmadkhasan68.kalpataru.model.UserPreference
+import com.akhmadkhasan68.kalpataru.ui.login.LoginViewModel
+import com.akhmadkhasan68.kalpataru.ui.register.RegisterViewModel
+import com.akhmadkhasan68.kalpataru.ui.splash.SplashViewModel
 
 
 class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.NewInstanceFactory() {
@@ -10,18 +13,12 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
-//            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
-//                MainViewModel(pref) as T
-//            }
-//            modelClass.isAssignableFrom(CreateViewModel::class.java) -> {
-//                CreateViewModel(pref) as T
-//            }
-//            modelClass.isAssignableFrom(SignupViewModel::class.java) -> {
-//                SignupViewModel(pref) as T
-//            }
-//            modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
-//                LoginViewModel(pref) as T
-//            }
+            modelClass.isAssignableFrom(SplashViewModel::class.java) -> {
+                SplashViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
+                LoginViewModel(pref) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

@@ -3,6 +3,8 @@ package com.akhmadkhasan68.kalpataru.ui.login
 import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.*
+import com.akhmadkhasan68.kalpataru.data.remote.response.ErrorResponse
+import com.akhmadkhasan68.kalpataru.data.remote.response.LoginResponse
 import com.akhmadkhasan68.kalpataru.data.remote.retrofit.GithubApiConfig
 import com.akhmadkhasan68.kalpataru.model.UserModel
 import com.akhmadkhasan68.kalpataru.model.UserPreference
@@ -25,43 +27,51 @@ class LoginViewModel(private val pref: UserPreference) : ViewModel() {
         return pref.getUser().asLiveData()
     }
 
-    fun login(email: String, password: String){
+    fun login(username: String, password: String){
         _isLoading.value = true
 
-//        client.login(email, password).enqueue(object : Callback<LoginResponse> {
-//            override fun onResponse(
-//                call: Call<LoginResponse>,
-//                response: Response<LoginResponse>
-//            ) {
-//                _isLoading.value = false
-//                if(response.isSuccessful){
-//                    Log.e(ContentValues.TAG, response.body().toString())
-//                    val name = response.body()?.loginResult?.name
-//                    val userId = response.body()?.loginResult?.userId
-//                    val token = response.body()?.loginResult?.token
-//
-//                    val userData = UserModel(
-//                        userId!!,
-//                        name!!,
-//                        token!!,
-//                        true
-//                    )
-//
-//                    viewModelScope.launch {
-//                        pref.login(userData)
-//                    }
-//                }else {
-//                    val errorResponse = Gson().fromJson(response.errorBody()!!.charStream(), ErrorResponse::class.java)
-//
-//                    _errorMessage.value = errorResponse.message!!
-//                    Log.e(ContentValues.TAG, "onFailure: ${errorResponse.message}")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-//                _isLoading.value = false
-//                Log.e(ContentValues.TAG, "onFailure: ${t.message.toString()}")
-//            }
-//        })
+        client.login(username, password).enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(
+                call: Call<LoginResponse>,
+                response: Response<LoginResponse>
+            ) {
+                _isLoading.value = false
+
+                if(response.isSuccessful){
+                    Log.e(ContentValues.TAG, response.body().toString())
+
+                    val name = response.body()?.user?.member?.name
+                    val username = response.body()?.user?.username
+                    val email = response.body()?.user?.email
+                    val type = response.body()?.user?.type
+                    val userId = response.body()?.user?.id.toString()
+                    val token = response.body()?.token?.accessToken
+
+                    val userData = UserModel(
+                        userId!!,
+                        username!!,
+                        email!!,
+                        type!!,
+                        name!!,
+                        token!!,
+                        true
+                    )
+
+                    viewModelScope.launch {
+                        pref.login(userData)
+                    }
+                }else {
+                    val errorResponse = Gson().fromJson(response.errorBody()!!.charStream(), ErrorResponse::class.java)
+
+                    _errorMessage.value = errorResponse.message!!
+                    Log.e(ContentValues.TAG, "onFailure: ${errorResponse.message}")
+                }
+            }
+
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.e(ContentValues.TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
     }
 }

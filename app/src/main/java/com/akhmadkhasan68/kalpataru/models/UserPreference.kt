@@ -13,6 +13,9 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         return dataStore.data.map { preferences ->
             UserModel(
                 preferences[USER_ID_KEY] ?:"",
+                preferences[USERNAME_KEY] ?:"",
+                preferences[EMAIL_KEY] ?:"",
+                preferences[TYPE_KEY] ?:"",
                 preferences[NAME_KEY] ?:"",
                 preferences[TOKEN_KEY] ?:"",
                 preferences[STATE_KEY] ?: false
@@ -27,6 +30,9 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
     suspend fun login(user: UserModel) {
         dataStore.edit { preferences ->
             preferences[USER_ID_KEY] = user.userId
+            preferences[USERNAME_KEY] = user.username
+            preferences[EMAIL_KEY] = user.email
+            preferences[TYPE_KEY] = user.type
             preferences[NAME_KEY] = user.name
             preferences[TOKEN_KEY] = user.token
             preferences[STATE_KEY] = user.isLogin
@@ -36,6 +42,9 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
     suspend fun logout() {
         dataStore.edit { preferences ->
             preferences[USER_ID_KEY] = ""
+            preferences[USERNAME_KEY] = ""
+            preferences[EMAIL_KEY] = ""
+            preferences[TYPE_KEY] = ""
             preferences[NAME_KEY] = ""
             preferences[TOKEN_KEY] = ""
             preferences[STATE_KEY] = false
@@ -47,6 +56,9 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         private var INSTANCE: UserPreference? = null
 
         private val USER_ID_KEY = stringPreferencesKey("userId")
+        private val USERNAME_KEY = stringPreferencesKey("username")
+        private val EMAIL_KEY = stringPreferencesKey("email")
+        private val TYPE_KEY = stringPreferencesKey("type")
         private val NAME_KEY = stringPreferencesKey("name")
         private val TOKEN_KEY = stringPreferencesKey("token")
         private val STATE_KEY = booleanPreferencesKey("state")
