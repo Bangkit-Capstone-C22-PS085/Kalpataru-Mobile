@@ -1,12 +1,13 @@
 package com.akhmadkhasan68.kalpataru.ui.sell
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.databinding.FragmentSellBinding
 
 class SellFragment : Fragment() {
@@ -28,15 +29,25 @@ class SellFragment : Fragment() {
         _binding = FragmentSellBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSell
-        sellViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        binding.rvSell.layoutManager = LinearLayoutManager(activity)
+        val listSellAdapter = ListSellAdapter()
+        binding.rvSell.adapter = listSellAdapter
+
         return root
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.sell_menu, menu)
     }
 }

@@ -1,13 +1,14 @@
 package com.akhmadkhasan68.kalpataru.ui.history
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.databinding.FragmentHistoryBinding
+import com.akhmadkhasan68.kalpataru.ui.sell.ListSellAdapter
 
 class HistoryFragment : Fragment() {
 
@@ -28,15 +29,24 @@ class HistoryFragment : Fragment() {
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHistory
-        historyViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        binding.rvHistory.layoutManager = LinearLayoutManager(activity)
+        val listHistoryAdapter = ListHistoryAdapter()
+        binding.rvHistory.adapter = listHistoryAdapter
+
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.history_menu, menu)
     }
 }

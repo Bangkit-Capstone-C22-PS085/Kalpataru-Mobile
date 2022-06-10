@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/fragment_history.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/fragment_sell.xml" value="0.2" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/item_history.xml" value="0.4" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/item_sell.xml" value="0.264" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/menu/history_menu.xml" value="0.25" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/menu/sell_menu.xml" value="0.25" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru/app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.2265" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru/app/src/main/res/drawable/ic_baseline_photo_camera_back_24.xml" value="0.2265" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru/app/src/main/res/layout/activity_camera.xml" value="0.22826086956521738" />

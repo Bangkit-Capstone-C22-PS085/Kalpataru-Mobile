@@ -14,4 +14,15 @@
     <string name="title_sell">Jual</string>
     <string name="title_history">Riwayat</string>
     <string name="title_profile">Profil</string>
+
+    <string name="trashname">Nama Sampah</string>
+    <string name="trashweight">Berat Sampah</string>
+    <string name="total">Total</string>
+    <string name="nominal">Rp. Nominal</string>
+    <string name="sell">Jual</string>
+    <string name="add">Tambah item</string>
+
+    <string name="status">Status Transaksi</string>
+    <string name="date">Tanggal Transaksi</string>
+    <string name="more_item">+n item lainnya</string>
 </resources>
