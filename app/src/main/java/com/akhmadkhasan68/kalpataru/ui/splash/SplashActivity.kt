@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.akhmadkhasan68.kalpataru.MainActivity
 import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.ui.onborading.OnboardingActivity
 

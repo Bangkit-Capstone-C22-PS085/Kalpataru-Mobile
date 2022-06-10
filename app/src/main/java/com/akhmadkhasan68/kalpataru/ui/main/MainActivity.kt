@@ -1,4 +1,4 @@
-package com.akhmadkhasan68.kalpataru
+package com.akhmadkhasan68.kalpataru.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.databinding.ActivityMainBinding
 import com.akhmadkhasan68.kalpataru.ui.camera.CameraActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,7 +29,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_sell, R.id.navigation_history, R.id.navigation_profile
+                R.id.navigation_home,
+                R.id.navigation_sell,
+                R.id.navigation_history,
+                R.id.navigation_profile
             )
         )
 

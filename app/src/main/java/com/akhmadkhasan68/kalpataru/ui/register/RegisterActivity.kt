@@ -1,4 +1,4 @@
-package com.akhmadkhasan68.kalpataru.ui.onborading
+package com.akhmadkhasan68.kalpataru.ui.register
 
 import android.content.Intent
 import android.os.Build
@@ -6,16 +6,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.akhmadkhasan68.kalpataru.databinding.ActivityOnboardingBinding
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import com.akhmadkhasan68.kalpataru.R
+import com.akhmadkhasan68.kalpataru.databinding.ActivityLoginBinding
+import com.akhmadkhasan68.kalpataru.databinding.ActivityRegisterBinding
 import com.akhmadkhasan68.kalpataru.ui.login.LoginActivity
-import com.akhmadkhasan68.kalpataru.ui.main.MainActivity
 
-class OnboardingActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityOnboardingBinding
+class RegisterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOnboardingBinding.inflate(layoutInflater)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupView()
@@ -23,10 +26,9 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun setupActions() {
-        binding.btnStart.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+        binding.txtLoginNow.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 
@@ -41,5 +43,16 @@ class OnboardingActivity : AppCompatActivity() {
             )
         }
         supportActionBar?.hide()
+
+        val spinner : Spinner = binding.roleOptions
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.roles_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
+
     }
 }

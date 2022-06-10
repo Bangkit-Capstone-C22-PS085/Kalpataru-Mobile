@@ -1,4 +1,4 @@
-package com.akhmadkhasan68.kalpataru.ui.onborading
+package com.akhmadkhasan68.kalpataru.ui.login
 
 import android.content.Intent
 import android.os.Build
@@ -6,16 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.akhmadkhasan68.kalpataru.databinding.ActivityOnboardingBinding
-import com.akhmadkhasan68.kalpataru.ui.login.LoginActivity
-import com.akhmadkhasan68.kalpataru.ui.main.MainActivity
+import com.akhmadkhasan68.kalpataru.R
+import com.akhmadkhasan68.kalpataru.databinding.ActivityLoginBinding
+import com.akhmadkhasan68.kalpataru.ui.register.RegisterActivity
 
-class OnboardingActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityOnboardingBinding
+class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOnboardingBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupView()
@@ -23,10 +23,9 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun setupActions() {
-        binding.btnStart.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+        binding.txtRegisterNow.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 

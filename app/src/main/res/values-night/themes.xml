@@ -14,10 +14,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="buttonStyle">@style/buttonStyle</item>
+        <item name="android:buttonStyle">@style/buttonStyle</item>
     </style>
 
     <style name="buttonStyle" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/rounded_corner_primary</item>
+        <item name="android:padding">5dp</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="backgroundTint">@color/secondary</item>
     </style>
 </resources>
