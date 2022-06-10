@@ -23,6 +23,16 @@
     <string name="sell">Jual</string>
     <string name="add">Tambah item</string>
 
+    <string name="profile_name">Nama User</string>
+    <string name="address">Alamat</string>
+    <string name="logout">Logout</string>
+    <string name="profile_status">Pengepul/Penjual</string>
+
+    <string name="info1">Barang bekas yang dijual disekitarmu!</string>
+    <string name="sellername">Nama Penjual</string>
+    <string name="selleraddress">Alamat Penjual</string>
+    <string name="selldate">Tanggal Jual</string>
+
     <string name="status">Status Transaksi</string>
     <string name="date">Tanggal Transaksi</string>
     <string name="more_item">+n item lainnya</string>

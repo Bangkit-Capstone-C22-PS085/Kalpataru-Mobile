@@ -3,6 +3,7 @@ package com.akhmadkhasan68.kalpataru.ui.sell
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +33,8 @@ class SellFragment : Fragment() {
         binding.rvSell.layoutManager = LinearLayoutManager(activity)
         val listSellAdapter = ListSellAdapter()
         binding.rvSell.adapter = listSellAdapter
+
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
         return root
     }

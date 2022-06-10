@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.akhmadkhasan68.kalpataru.databinding.FragmentProfileBinding
 class ProfileFragment : Fragment() {
@@ -26,10 +27,8 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textProfile
-        profileViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+
         return root
     }
 

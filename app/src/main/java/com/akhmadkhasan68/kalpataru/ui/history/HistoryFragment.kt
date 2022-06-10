@@ -3,6 +3,7 @@ package com.akhmadkhasan68.kalpataru.ui.history
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +33,8 @@ class HistoryFragment : Fragment() {
         binding.rvHistory.layoutManager = LinearLayoutManager(activity)
         val listHistoryAdapter = ListHistoryAdapter()
         binding.rvHistory.adapter = listHistoryAdapter
+
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
         return root
     }

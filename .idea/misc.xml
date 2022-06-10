@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/drawable/home_bg1.xml" value="0.2265" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/drawable/profile_bg1.xml" value="0.2265" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/drawable/profile_picture.xml" value="0.2265" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/drawable/round.xml" value="0.2265" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/activity_camera.xml" value="0.25" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/activity_main.xml" value="0.46647230320699706" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/fragment_history.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/fragment_sell.xml" value="0.2" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/item_history.xml" value="0.4" />
+        <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/item_home.xml" value="0.4" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/layout/item_sell.xml" value="0.264" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru-Mobile/app/src/main/res/menu/history_menu.xml" value="0.25" />
@@ -21,13 +30,10 @@
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/resha/AndroidStudioProjects/Kalpataru/app/src/main/res/menu/bottom_navi_menu.xml" value="0.25" />
         <entry key="app/src/main/res/drawable-v24/ic_circle_24.xml" value="0.132" />
-        <entry key="app/src/main/res/drawable/edit_text_rounded.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.237" />
         <entry key="app/src/main/res/drawable/rounded_corner_primary.xml" value="0.237" />
         <entry key="app/src/main/res/font/poppins.xml" value="0.3255208333333333" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.35046081542968754" />
         <entry key="app/src/main/res/layout/activity_onboarding.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.3684036254882812" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19610507246376813" />
       </map>
     </option>

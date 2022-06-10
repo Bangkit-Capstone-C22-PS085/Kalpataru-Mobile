@@ -33,7 +33,8 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_baseline_eco_24"
-        app:layout_anchor="@id/bottomAppBar" />
+        app:layout_anchor="@id/bottomAppBar"
+        app:tint="@color/white"/>
 
     <fragment
         android:id="@+id/nav_host_fragment_activity_main"
