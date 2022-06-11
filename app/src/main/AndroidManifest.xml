@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kalpataru"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB9o3TjECDdGBt0y6yJSPZiE8cp0X54ZFA" />
         <activity
             android:name=".ui.history.HistoryDetailActivity"
             android:exported="false" />
