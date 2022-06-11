@@ -1,8 +1,10 @@
 package com.akhmadkhasan68.kalpataru.data.remote.response.partials
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class DetailTransaction(
 
     @field:SerializedName("transaction_id")
@@ -28,4 +30,4 @@ data class DetailTransaction(
 
     @field:SerializedName("trash")
     val trash: Trash? = null
-)
+) : Parcelable

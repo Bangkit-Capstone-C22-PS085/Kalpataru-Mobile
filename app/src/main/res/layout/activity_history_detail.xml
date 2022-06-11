@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/btn_map"
+        android:visibility="gone"
         style="@style/buttonStyle"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
@@ -98,6 +99,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_status"
         app:srcCompat="@drawable/ic_baseline_more_vert_24"
-        app:tint="@color/secondary"/>
+        app:tint="@color/secondary"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

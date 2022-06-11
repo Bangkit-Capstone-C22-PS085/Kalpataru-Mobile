@@ -1,7 +1,10 @@
 package com.akhmadkhasan68.kalpataru.data.remote.response.partials
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class DataTransactions(
 
     @field:SerializedName("createdAt")
@@ -17,10 +20,10 @@ data class DataTransactions(
     val member: Member? = null,
 
     @field:SerializedName("user_id_operator")
-    val userIdOperator: Any? = null,
+    val userIdOperator: Int? = null,
 
     @field:SerializedName("details")
-    val details: List<DetailTransaction?>? = null,
+    val details: List<DetailTransaction>,
 
     @field:SerializedName("id")
     val id: Int? = null,
@@ -33,4 +36,4 @@ data class DataTransactions(
 
     @field:SerializedName("updatedAt")
     val updatedAt: String? = null
-)
+) : Parcelable

@@ -34,10 +34,6 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.btnAddress.setOnClickListener(){
-            startActivity(Intent(activity, AddressActivity::class.java))
-        }
-
         setupViewModel()
         setupActions()
 
@@ -46,7 +42,7 @@ class ProfileFragment : Fragment() {
 
     private fun setupActions() {
         binding.addressSection.setOnClickListener {
-
+            startActivity(Intent(activity, AddressActivity::class.java))
         }
 
         binding.logoutSection.setOnClickListener {

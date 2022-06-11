@@ -1,15 +1,17 @@
 package com.akhmadkhasan68.kalpataru.data.remote.response.partials
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Member(
 
     @field:SerializedName("createdAt")
     val createdAt: String? = null,
 
     @field:SerializedName("address")
-    val address: Any? = null,
+    val address: String? = null,
 
     @field:SerializedName("balance")
     val balance: Int? = null,
@@ -24,15 +26,15 @@ data class Member(
     val id: Int? = null,
 
     @field:SerializedName("long")
-    val long: Any? = null,
+    val long: String? = null,
 
     @field:SerializedName("lat")
-    val lat: Any? = null,
+    val lat: String? = null,
 
     @field:SerializedName("points")
     val points: Int? = null,
 
     @field:SerializedName("updatedAt")
     val updatedAt: String? = null
-)
+) : Parcelable
 

@@ -1,7 +1,11 @@
 package com.akhmadkhasan68.kalpataru.ui.history
 
 import android.content.Context
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
+import android.service.autofill.UserData
+import android.util.Log
 import android.view.*
 import android.widget.RadioButton
 import androidx.datastore.core.DataStore
@@ -9,8 +13,10 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akhmadkhasan68.kalpataru.R
+import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataTransactions
 import com.akhmadkhasan68.kalpataru.databinding.FragmentHistoryBinding
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.akhmadkhasan68.kalpataru.ui.ViewModelFactory
@@ -32,10 +38,6 @@ class HistoryFragment : Fragment() {
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.rvHistory.layoutManager = LinearLayoutManager(activity)
-        val listHistoryAdapter = ListHistoryAdapter()
-        binding.rvHistory.adapter = listHistoryAdapter
-
         setupView()
         setupViewModel()
 
@@ -46,6 +48,43 @@ class HistoryFragment : Fragment() {
         historyViewModel = ViewModelProvider(this,
             ViewModelFactory(UserPreference.getInstance(dataStore))
         )[HistoryViewModel::class.java]
+
+        historyViewModel.getData()
+
+        historyViewModel.data.observe(viewLifecycleOwner, {
+            setHistoryData(it)
+        })
+    }
+
+    private fun setHistoryData(data: List<DataTransactions>) {
+//        binding.rvHistory.layoutManager = LinearLayoutManager(activity)
+
+        if(data.isNotEmpty()){
+            binding.rvHistory.visibility = View.VISIBLE
+
+            if(context?.resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE){
+                binding.rvHistory.layoutManager = GridLayoutManager(context, 2)
+            }else{
+                binding.rvHistory.layoutManager = LinearLayoutManager(context)
+            }
+
+            val listHistoryAdapter = ListHistoryAdapter(data)
+            binding.rvHistory.adapter = listHistoryAdapter
+
+            listHistoryAdapter.setOnItemClickCallback(object: ListHistoryAdapter.OnItemClickCallback{
+                override fun onItemClicked(data: DataTransactions) {
+                    showSelectedData(data)
+                }
+            })
+        }else{
+            binding.rvHistory.visibility = View.INVISIBLE
+        }
+    }
+
+    private fun showSelectedData(data: DataTransactions) {
+        val intent = Intent(getContext(), HistoryDetailActivity::class.java)
+        intent.putExtra(HistoryDetailActivity.DATA_DETAIL, data)
+        startActivity(intent)
     }
 
     fun onRadioButtonClicked(view: View) {

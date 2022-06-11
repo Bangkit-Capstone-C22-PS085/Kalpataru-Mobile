@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class TransactionResponse(
 	@field:SerializedName("data")
-	val data: List<DataTransactions?>? = null,
+	val data: List<DataTransactions>,
 
 	@field:SerializedName("message")
 	val message: String? = null

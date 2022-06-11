@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.akhmadkhasan68.kalpataru.data.remote.response.ErrorResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.LoginResponse
+import com.akhmadkhasan68.kalpataru.data.remote.response.TransactionResponse
+import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataTransactions
 import com.akhmadkhasan68.kalpataru.data.remote.retrofit.GithubApiConfig
 import com.akhmadkhasan68.kalpataru.model.UserModel
 import com.akhmadkhasan68.kalpataru.model.UserPreference
@@ -23,53 +25,29 @@ class HistoryViewModel(private val pref: UserPreference) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading : LiveData<Boolean> = _isLoading
 
-    private val _data = MutableLiveData<String>()
-    val data : LiveData<String> = _data
+    private val _data = MutableLiveData<List<DataTransactions>>()
+    val data : LiveData<List<DataTransactions>> = _data
 
     fun getData(){
         _isLoading.value = true
-//        client.login(username, password).enqueue(object : Callback<LoginResponse> {
-//            override fun onResponse(
-//                call: Call<LoginResponse>,
-//                response: Response<LoginResponse>
-//            ) {
-//                _isLoading.value = false
-//
-//                if(response.isSuccessful){
-//                    Log.e(ContentValues.TAG, response.body().toString())
-//
-//                    val name = response.body()?.user?.member?.name
-//                    val username = response.body()?.user?.username
-//                    val email = response.body()?.user?.email
-//                    val type = response.body()?.user?.type
-//                    val userId = response.body()?.user?.id.toString()
-//                    val token = response.body()?.token?.accessToken
-//
-//                    val userData = UserModel(
-//                        userId!!,
-//                        username!!,
-//                        email!!,
-//                        type!!,
-//                        name!!,
-//                        token!!,
-//                        true
-//                    )
-//
-//                    viewModelScope.launch {
-//                        pref.login(userData)
-//                    }
-//                }else {
-//                    val errorResponse = Gson().fromJson(response.errorBody()!!.charStream(), ErrorResponse::class.java)
-//
-//                    _errorMessage.value = errorResponse.message!!
-//                    Log.e(ContentValues.TAG, "onFailure: ${errorResponse.message}")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-//                _isLoading.value = false
-//                Log.e(ContentValues.TAG, "onFailure: ${t.message.toString()}")
-//            }
-//        })
+        client.getTransactions().enqueue(object: Callback<TransactionResponse>{
+            override fun onResponse(
+                call: Call<TransactionResponse>,
+                response: Response<TransactionResponse>
+            ) {
+                _isLoading.value = false
+                if(response.isSuccessful){
+                    _data.value = response.body()?.data
+                }else{
+                    val errorResponse = Gson().fromJson(response.errorBody()!!.charStream(), ErrorResponse::class.java)
+                    Log.e(ContentValues.TAG, "onFailure: ${errorResponse.message}")
+                }
+            }
+
+            override fun onFailure(call: Call<TransactionResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.e(ContentValues.TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
     }
 }

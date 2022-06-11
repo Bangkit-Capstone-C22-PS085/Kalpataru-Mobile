@@ -106,7 +106,7 @@ class AddressActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(
             MarkerOptions()
                 .position(startLocation)
-                .title(getString(R.string.point))
+                .title(getString(R.string.location_point))
         )
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(startLocation, 17f))
     }

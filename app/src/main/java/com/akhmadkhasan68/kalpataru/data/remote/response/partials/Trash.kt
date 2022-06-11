@@ -1,7 +1,10 @@
 package com.akhmadkhasan68.kalpataru.data.remote.response.partials
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Trash(
 
     @field:SerializedName("createdAt")
@@ -18,4 +21,4 @@ data class Trash(
 
     @field:SerializedName("updatedAt")
     val updatedAt: String? = null
-)
+) : Parcelable

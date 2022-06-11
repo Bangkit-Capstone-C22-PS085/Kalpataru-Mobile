@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class GithubApiConfig {
     companion object{
-        private const val BASE_URL = "http://192.168.1.50:3000/api/"
+        private const val BASE_URL = "http://192.168.1.6:3000/api/"
 
         fun getGithubApiServices(pref: UserPreference? = null): GithubApiService {
             val loggingInterceptor = if(BuildConfig.DEBUG){

@@ -39,7 +39,7 @@
     <string name="sellername">Nama Penjual</string>
     <string name="selleraddress">Alamat Penjual</string>
     <string name="selldate">Tanggal Jual</string>
-    <string name="point">Lokasi</string>
+    <string name="location_point">Lokasi</string>
 
     <string name="status">Status Transaksi</string>
     <string name="date">Tanggal Transaksi</string>
