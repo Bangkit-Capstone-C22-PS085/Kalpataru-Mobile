@@ -35,7 +35,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
         <TextView
-            android:id="@+id/txtProvince"
+            android:id="@+id/txtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
         <EditText
-            android:id="@+id/editTextProvince"
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -58,8 +58,8 @@
             android:background="@drawable/edit_text_rounded"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txtProvince"
-            app:layout_constraintTop_toBottomOf="@+id/txtProvince" />
+            app:layout_constraintStart_toStartOf="@+id/txtName"
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
         <TextView
             android:id="@+id/txtUsername"
@@ -73,7 +73,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextProvince" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
         <EditText
             android:id="@+id/editTextUsername"
@@ -196,7 +196,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtregisterAs" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnApply"
+            android:id="@+id/btnRegister"
             style="@style/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -219,7 +219,7 @@
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnApply" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
         <TextView
             android:id="@+id/txtLoginNow"

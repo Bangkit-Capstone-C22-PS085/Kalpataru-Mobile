@@ -1,4 +1,4 @@
-package com.akhmadkhasan68.kalpataru.data.remote.response
+package com.akhmadkhasan68.kalpataru.data.remote.response.partials
 
 import com.google.gson.annotations.SerializedName
 
@@ -23,7 +23,7 @@ data class User(
     val email: String? = null,
 
     @field:SerializedName("operator")
-    val operator: Any? = null,
+    val operator: Operator? = null,
 
     @field:SerializedName("username")
     val username: String? = null,

@@ -20,13 +20,65 @@
         android:id="@+id/tv_profilestatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/profile_status"
+        android:text="-"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/img_profile"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <LinearLayout
+        android:id="@+id/point_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tv_profilestatus"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profilestatus"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/point_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/point"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/balance_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/point_section"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profilestatus">
+
+        <TextView
+            android:id="@+id/balance_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/balance"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <View
         android:id="@+id/bg2"
@@ -39,67 +91,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bg1" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_profile"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_profilestatus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        tools:src="@tools:sample/avatars" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/profile_name"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="-"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/img_profile"
-        app:layout_constraintTop_toTopOf="@+id/bg1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/ic_logout"
+    <LinearLayout
+        android:id="@+id/addressSection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/ic_baseline_logout_24"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ic_address"
-        app:tint="@color/secondary" />
+        app:layout_constraintTop_toBottomOf="@+id/bg1">
+        <ImageView
+            android:id="@+id/ic_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_house_24"
+            app:tint="@color/secondary"/>
 
-    <TextView
-        android:id="@+id/tv_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="@string/logout"
-        app:layout_constraintStart_toEndOf="@+id/ic_logout"
-        app:layout_constraintTop_toTopOf="@+id/ic_logout" />
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/address" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/ic_address"
+    <LinearLayout
+        android:id="@+id/logoutSection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:src="@drawable/ic_baseline_house_24"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bg1"
-        app:tint="@color/secondary"/>
+        app:layout_constraintTop_toBottomOf="@+id/addressSection">
 
-    <TextView
-        android:id="@+id/tv_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="@string/address"
-        app:layout_constraintStart_toEndOf="@+id/ic_address"
-        app:layout_constraintTop_toTopOf="@+id/ic_address" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_logout_24"
+            app:tint="@color/secondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/logout" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/btn_edit"
@@ -110,6 +159,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_profilestatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

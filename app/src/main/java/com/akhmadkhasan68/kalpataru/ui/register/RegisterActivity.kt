@@ -102,6 +102,7 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         val isRoleError : Boolean = role.length == 0
 
         Log.d("password confirmation", isPasswordNotMatch.toString())
+        Log.d("password", "${password.text.trim()} ${passwordConfirm.text.trim()}")
 
         if(isNameError || isUsernameError || isEmailError || isPasswordError || isPasswordConfirmError || isPasswordNotMatch || isRoleError){
             if(isNameError){

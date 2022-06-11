@@ -24,7 +24,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view5"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_history"
@@ -58,13 +59,13 @@
         android:translationZ="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -109,21 +110,33 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="5dp"
                     android:onClick="onRadioButtonClicked"
-                    android:text="@string/cancel"
+                    android:text="@string/canceled"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/radio_finish" />
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/grey"
+                    android:text="@string/cancel"
+                    android:textColor="@color/primary"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_apply"
+                    app:layout_constraintTop_toBottomOf="@+id/radio_cancel" />
 
                 <Button
                     android:id="@+id/btn_apply"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/secondary"
                     android:text="@string/apply"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/radio_cancel" />
+                    app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </RadioGroup>

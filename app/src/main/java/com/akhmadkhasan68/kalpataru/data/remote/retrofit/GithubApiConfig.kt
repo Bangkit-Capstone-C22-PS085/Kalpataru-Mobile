@@ -1,5 +1,6 @@
 package com.akhmadkhasan68.kalpataru.data.remote.retrofit
 
+import android.util.Log
 import androidx.viewbinding.BuildConfig
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import kotlinx.coroutines.flow.first
@@ -12,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class GithubApiConfig {
     companion object{
-        private const val BASE_URL = "http://192.168.1.6:3000/api/"
+        private const val BASE_URL = "http://192.168.1.50:3000/api/"
 
         fun getGithubApiServices(pref: UserPreference? = null): GithubApiService {
             val loggingInterceptor = if(BuildConfig.DEBUG){
@@ -26,8 +27,12 @@ class GithubApiConfig {
                     pref?.getToken()?.first()
                 }
 
+                if (token != null) {
+                    Log.e("token", token)
+                }
+
                 val request = chain.request().newBuilder()
-                if(pref != null) request.addHeader("Authorization", "Bearer $token")
+                if(pref != null) request.addHeader("Authorization", token.toString())
 
                 chain.proceed(request.build())
             }
