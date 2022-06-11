@@ -26,29 +26,7 @@
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_moreitem" />
-
-        <ImageView
-            android:id="@+id/img_item2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tv_item2weight"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_item2name"
-            card_view:layout_constraintVertical_bias="1.0"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/tv_item1weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/trashweight"
-            android:textSize="10sp"
-            card_view:layout_constraintStart_toEndOf="@+id/img_item1"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_item1name" />
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_itemcount" />
 
         <ImageView
             android:id="@+id/ic_status"
@@ -97,75 +75,19 @@
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_selldate" />
 
-        <ImageView
-            android:id="@+id/img_item1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tv_item1weight"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_item1name"
-            tools:srcCompat="@tools:sample/avatars" />
-
         <TextView
-            android:id="@+id/tv_item1name"
+            android:id="@+id/tv_itemweight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
             android:text="@string/trashweight"
-            android:textSize="12sp"
-            card_view:layout_constraintStart_toEndOf="@+id/img_item1"
-            card_view:layout_constraintTop_toBottomOf="@+id/view" />
-
-        <TextView
-            android:id="@+id/tv_item1nominal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@string/nominal"
             android:textColor="@color/secondary"
             android:textSize="12sp"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tv_item1weight"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_item1name" />
+            card_view:layout_constraintBottom_toBottomOf="@+id/tv_itemcount"
+            card_view:layout_constraintEnd_toStartOf="@+id/tv_kg"
+            card_view:layout_constraintTop_toTopOf="@+id/tv_itemcount" />
 
         <TextView
-            android:id="@+id/tv_item2name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/trashname"
-            android:textSize="12sp"
-            card_view:layout_constraintStart_toEndOf="@+id/img_item2"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_item1weight" />
-
-        <TextView
-            android:id="@+id/tv_item2weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/trashweight"
-            android:textSize="10sp"
-            card_view:layout_constraintStart_toEndOf="@+id/img_item2"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_item2name" />
-
-        <TextView
-            android:id="@+id/tv_item2nominal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@string/nominal"
-            android:textColor="@color/secondary"
-            android:textSize="12sp"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tv_item2weight"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_item2name" />
-
-        <TextView
-            android:id="@+id/tv_moreitem"
+            android:id="@+id/tv_itemcount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -173,7 +95,7 @@
             android:text="@string/more_item"
             android:textSize="12sp"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_item2weight" />
+            card_view:layout_constraintTop_toBottomOf="@+id/view" />
 
         <TextView
             android:id="@+id/tv_total"
@@ -197,6 +119,17 @@
             card_view:layout_constraintBottom_toBottomOf="@+id/view3"
             card_view:layout_constraintEnd_toEndOf="@+id/view3"
             card_view:layout_constraintTop_toTopOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/tv_kg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text=" kg"
+            android:textSize="12sp"
+            card_view:layout_constraintBottom_toBottomOf="@+id/tv_itemweight"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="@+id/tv_itemweight" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
