@@ -19,6 +19,15 @@
         android:theme="@style/Theme.Kalpataru"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.history.HistoryDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.HomeDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.AddressActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.camera.InsertActivity"
             android:exported="false" />
         <activity
