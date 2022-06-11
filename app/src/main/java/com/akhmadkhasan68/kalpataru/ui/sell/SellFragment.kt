@@ -34,8 +34,6 @@ class SellFragment : Fragment() {
         val listSellAdapter = ListSellAdapter()
         binding.rvSell.adapter = listSellAdapter
 
-        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
-
         return root
     }
 
@@ -43,14 +41,5 @@ class SellFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.sell_menu, menu)
     }
 }

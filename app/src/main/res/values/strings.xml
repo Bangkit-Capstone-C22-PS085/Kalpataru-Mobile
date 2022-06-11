@@ -21,7 +21,13 @@
     <string name="total">Total</string>
     <string name="nominal">Rp. Nominal</string>
     <string name="sell">Jual</string>
+    <string name="weight">Berat</string>
     <string name="add">Tambah item</string>
+    <string name="apply">Terapkan</string>
+    <string name="all">Semua</string>
+    <string name="finish">Selesai</string>
+    <string name="cancel">Dibatalkan</string>
+    <string name="progress">Sedang proses</string>
 
     <string name="profile_name">Nama User</string>
     <string name="address">Alamat</string>

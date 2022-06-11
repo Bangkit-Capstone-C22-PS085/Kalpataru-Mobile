@@ -27,8 +27,6 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-
         return root
     }
 

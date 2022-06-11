@@ -31,8 +31,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-
         binding.rvHome.layoutManager = LinearLayoutManager(activity)
         val homeAdapter = HomeAdapter()
         binding.rvHome.adapter = homeAdapter

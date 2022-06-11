@@ -34,22 +34,11 @@ class HistoryFragment : Fragment() {
         val listHistoryAdapter = ListHistoryAdapter()
         binding.rvHistory.adapter = listHistoryAdapter
 
-        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
-
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.history_menu, menu)
     }
 }
