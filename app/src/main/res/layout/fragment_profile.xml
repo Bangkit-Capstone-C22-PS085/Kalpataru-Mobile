@@ -112,4 +112,15 @@
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:tint="@color/white" />
 
+    <Button
+        android:id="@+id/btn_address"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+        app:layout_constraintEnd_toEndOf="@+id/tv_address"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ic_address"
+        app:layout_constraintTop_toTopOf="@+id/tv_address" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

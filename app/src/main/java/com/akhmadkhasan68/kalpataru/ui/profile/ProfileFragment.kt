@@ -1,5 +1,6 @@
 package com.akhmadkhasan68.kalpataru.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,6 +27,10 @@ class ProfileFragment : Fragment() {
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        binding.btnAddress.setOnClickListener(){
+            startActivity(Intent(activity, AddressActivity::class.java))
+        }
 
         return root
     }
