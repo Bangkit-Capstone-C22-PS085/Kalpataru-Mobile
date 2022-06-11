@@ -33,6 +33,7 @@
     <string name="address">Alamat</string>
     <string name="logout">Logout</string>
     <string name="profile_status">Pengepul/Penjual</string>
+    <string name="btn_map">Lihat di Map</string>
 
     <string name="info1">Barang bekas yang dijual disekitarmu!</string>
     <string name="sellername">Nama Penjual</string>
