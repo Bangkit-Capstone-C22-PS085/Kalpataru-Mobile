@@ -60,15 +60,16 @@ class ProfileFragment : Fragment() {
         profileViewModel.getUser()
 
         profileViewModel.userDetail.observe(viewLifecycleOwner, {
-            binding.tvProfilestatus.text = it.type?.trim()
             if(it.type?.toString() == "MEMBER"){
                 binding.textView.text = it.member?.name
                 binding.point.text = it.member?.points.toString()
                 binding.balance.text = it.member?.balance.toString()
+                binding.tvProfilestatus.text = "Penjual"
             }else{
                 binding.textView.text = it.operator?.name
                 binding.point.text = it.operator?.points.toString()
                 binding.balance.text = it.operator?.balance.toString()
+                binding.tvProfilestatus.text = "Pengepul"
             }
         })
     }
