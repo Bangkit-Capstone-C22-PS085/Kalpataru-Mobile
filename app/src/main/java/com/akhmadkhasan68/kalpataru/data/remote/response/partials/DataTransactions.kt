@@ -17,7 +17,7 @@ data class DataTransactions(
     val userId: Int? = null,
 
     @field:SerializedName("member")
-    val member: Member? = null,
+    val member: User? = null,
 
     @field:SerializedName("user_id_operator")
     val userIdOperator: Int? = null,
@@ -29,7 +29,7 @@ data class DataTransactions(
     val id: Int? = null,
 
     @field:SerializedName("operator")
-    val operator: Operator? = null,
+    val operator: User? = null,
 
     @field:SerializedName("status")
     val status: String? = null,

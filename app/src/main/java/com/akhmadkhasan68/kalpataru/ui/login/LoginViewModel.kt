@@ -40,12 +40,18 @@ class LoginViewModel(private val pref: UserPreference) : ViewModel() {
                 if(response.isSuccessful){
                     Log.e(ContentValues.TAG, response.body().toString())
 
-                    val name = response.body()?.user?.member?.name
                     val username = response.body()?.user?.username
                     val email = response.body()?.user?.email
                     val type = response.body()?.user?.type
                     val userId = response.body()?.user?.id.toString()
                     val token = response.body()?.token?.accessToken
+                    val name : String
+                    if(response.body()?.user?.type.toString() == "MEMBER"){
+                        name = response.body()?.user?.member?.name.toString()
+                    }else{
+                        name = response.body()?.user?.operator?.name.toString()
+                    }
+
 
                     val userData = UserModel(
                         userId!!,

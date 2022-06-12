@@ -2,10 +2,7 @@ package com.akhmadkhasan68.kalpataru.ui.history
 
 import android.content.ContentValues
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.akhmadkhasan68.kalpataru.data.remote.response.ErrorResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.LoginResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.TransactionResponse
@@ -28,6 +25,10 @@ class HistoryViewModel(private val pref: UserPreference) : ViewModel() {
     private val _data = MutableLiveData<List<DataTransactions>>()
     val data : LiveData<List<DataTransactions>> = _data
 
+    fun getUser(): LiveData<UserModel> {
+        return pref.getUser().asLiveData()
+    }
+
     fun getData(){
         _isLoading.value = true
         client.getTransactions().enqueue(object: Callback<TransactionResponse>{
@@ -39,6 +40,32 @@ class HistoryViewModel(private val pref: UserPreference) : ViewModel() {
                 if(response.isSuccessful){
                     _data.value = response.body()?.data
                 }else{
+                    val errorResponse = Gson().fromJson(response.errorBody()!!.charStream(), ErrorResponse::class.java)
+                    Log.e(ContentValues.TAG, "onFailure: ${errorResponse.message}")
+                }
+            }
+
+            override fun onFailure(call: Call<TransactionResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.e(ContentValues.TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
+    }
+
+    fun getDataOperatorTransaction() {
+        _isLoading.value = true
+        client.getOperatorTransactions().enqueue(object : Callback<TransactionResponse> {
+            override fun onResponse(
+                call: Call<TransactionResponse>,
+                response: Response<TransactionResponse>
+            ) {
+                _isLoading.value = false
+
+                if(response.isSuccessful){
+                    Log.e(ContentValues.TAG, response.body().toString())
+
+                    _data.value = response.body()?.data
+                }else {
                     val errorResponse = Gson().fromJson(response.errorBody()!!.charStream(), ErrorResponse::class.java)
                     Log.e(ContentValues.TAG, "onFailure: ${errorResponse.message}")
                 }

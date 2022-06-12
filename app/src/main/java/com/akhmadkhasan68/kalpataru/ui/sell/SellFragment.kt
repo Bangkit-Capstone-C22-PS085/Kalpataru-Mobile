@@ -70,12 +70,6 @@ class SellFragment : Fragment() {
         })
     }
 
-    private fun navigateToHistory() {
-        val transaction = activity?.supportFragmentManager?.beginTransaction()
-        transaction?.replace(R.id.nav_host_fragment_activity_main, HistoryFragment())
-        transaction?.commit()
-    }
-
     private fun showLoading(loading: Boolean) {
         if(loading){
             binding.loading.visibility = View.VISIBLE

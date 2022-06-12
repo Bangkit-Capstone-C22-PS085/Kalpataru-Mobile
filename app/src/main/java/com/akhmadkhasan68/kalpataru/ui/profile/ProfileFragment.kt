@@ -34,6 +34,8 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.pointSection.visibility = View.GONE
+
         setupViewModel()
         setupActions()
 
@@ -58,10 +60,16 @@ class ProfileFragment : Fragment() {
         profileViewModel.getUser()
 
         profileViewModel.userDetail.observe(viewLifecycleOwner, {
-            binding.textView.text = it.member?.name
             binding.tvProfilestatus.text = it.type?.trim()
-            binding.point.text = it.member?.points.toString()
-            binding.balance.text = it.member?.balance.toString()
+            if(it.type?.toString() == "MEMBER"){
+                binding.textView.text = it.member?.name
+                binding.point.text = it.member?.points.toString()
+                binding.balance.text = it.member?.balance.toString()
+            }else{
+                binding.textView.text = it.operator?.name
+                binding.point.text = it.operator?.points.toString()
+                binding.balance.text = it.operator?.balance.toString()
+            }
         })
     }
 

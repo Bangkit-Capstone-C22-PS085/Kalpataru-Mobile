@@ -41,6 +41,11 @@ interface GithubApiService {
     @POST("transactions")
     fun createTransaction() : Call<CreateTransactionResponse>
 
+    @PUT("transactions/complete/{id}")
+    fun completeTransaction(
+        @Path("id") id : Int,
+    ) : Call<BuyResponse>
+
     //Cart
     @GET("cart")
     fun getCart() : Call<CartResponse>
@@ -83,15 +88,13 @@ interface GithubApiService {
     @PUT("operator/transactions/buy/{id}")
     fun buyTransaction(
         @Path("id") id : Int,
-    ) : Call<MeResponse>
-
-    @PUT("operator/transactions/complete/{id}")
-    fun completeTransaction(
-        @Path("id") id : Int,
-    ) : Call<MeResponse>
+    ) : Call<BuyResponse>
 
     @GET("operator/transactions")
     fun getOperatorTransactions() : Call<TransactionResponse>
+
+    @GET("operator/transactions-discover")
+    fun getDiscoverTransactions() : Call<TransactionResponse>
 
     @GET("operator/transactions/{id}")
     fun getOperatorTransactionDetail(

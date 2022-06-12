@@ -49,7 +49,13 @@ class HistoryFragment : Fragment() {
             ViewModelFactory(UserPreference.getInstance(dataStore))
         )[HistoryViewModel::class.java]
 
-        historyViewModel.getData()
+        historyViewModel.getUser().observe(viewLifecycleOwner, { user ->
+            if(user.type.toString() == "MEMBER"){
+                historyViewModel.getData()
+            }else{
+                historyViewModel.getDataOperatorTransaction()
+            }
+        })
 
         historyViewModel.data.observe(viewLifecycleOwner, {
             setHistoryData(it)

@@ -6,7 +6,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Member(
-
     @field:SerializedName("createdAt")
     val createdAt: String? = null,
 

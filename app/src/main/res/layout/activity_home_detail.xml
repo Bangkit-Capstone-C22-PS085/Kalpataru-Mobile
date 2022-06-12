@@ -7,13 +7,13 @@
     tools:context=".ui.home.HomeDetailActivity">
 
     <Button
-        android:id="@+id/btn_map"
+        android:id="@+id/btn_buy"
         style="@style/buttonStyle"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:backgroundTint="@color/secondary"
-        android:text="@string/btn_map"
+        android:text="@string/buy_now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.686"
@@ -23,12 +23,11 @@
         android:id="@+id/rv_trash"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_total"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_sellerprofil"
+        app:layout_constraintTop_toBottomOf="@+id/tv_selleraddress"
         tools:listitem="@layout/item_trash" />
 
     <TextView
@@ -39,7 +38,7 @@
         android:layout_marginBottom="10dp"
         android:text="@string/total"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_map"
+        app:layout_constraintBottom_toTopOf="@+id/btn_buy"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -58,44 +57,46 @@
         android:id="@+id/tv_selldate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:text="@string/selldate"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/img_sellerprofil"
+        app:layout_constraintStart_toStartOf="@+id/tv_sellername"
         app:layout_constraintTop_toBottomOf="@+id/tv_sellername" />
 
     <TextView
         android:id="@+id/tv_selleraddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:text="@string/selleraddress"
-        app:layout_constraintStart_toEndOf="@+id/img_sellerprofil"
+        app:layout_constraintStart_toStartOf="@+id/tv_selldate"
         app:layout_constraintTop_toBottomOf="@+id/tv_selldate" />
 
     <TextView
         android:id="@+id/tv_sellername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
         android:text="@string/sellername"
         android:textColor="@color/secondary"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/img_sellerprofil"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_sellerprofil"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_selleraddress"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_sellername"
-        app:layout_constraintVertical_bias="0.405"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".8"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_loop="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

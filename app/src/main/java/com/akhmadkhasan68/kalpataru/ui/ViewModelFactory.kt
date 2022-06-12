@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.akhmadkhasan68.kalpataru.ui.camera.InsertViewModel
+import com.akhmadkhasan68.kalpataru.ui.history.HistoryDetailViewModel
 import com.akhmadkhasan68.kalpataru.ui.history.HistoryViewModel
+import com.akhmadkhasan68.kalpataru.ui.home.HomeDetailViewModel
 import com.akhmadkhasan68.kalpataru.ui.home.HomeViewModel
 import com.akhmadkhasan68.kalpataru.ui.login.LoginViewModel
 import com.akhmadkhasan68.kalpataru.ui.main.MainViewModel
@@ -46,6 +48,12 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             }
             modelClass.isAssignableFrom(InsertViewModel::class.java) -> {
                 InsertViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(HomeDetailViewModel::class.java) -> {
+                HomeDetailViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(HistoryDetailViewModel::class.java) -> {
+                HistoryDetailViewModel(pref) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

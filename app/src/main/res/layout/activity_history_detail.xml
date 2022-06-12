@@ -7,14 +7,13 @@
     tools:context=".ui.history.HistoryDetailActivity">
 
     <Button
-        android:id="@+id/btn_map"
-        android:visibility="gone"
+        android:id="@+id/btn_complete"
         style="@style/buttonStyle"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:backgroundTint="@color/secondary"
-        android:text="@string/finish"
+        android:text="@string/complete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.686"
@@ -40,7 +39,7 @@
         android:layout_marginBottom="10dp"
         android:text="@string/total"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_map"
+        app:layout_constraintBottom_toTopOf="@+id/btn_complete"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -101,5 +100,20 @@
         app:srcCompat="@drawable/ic_baseline_more_vert_24"
         app:tint="@color/secondary"
         android:visibility="gone"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".8"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_loop="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

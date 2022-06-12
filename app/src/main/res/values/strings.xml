@@ -35,7 +35,7 @@
     <string name="profile_status">Pengepul/Penjual</string>
     <string name="btn_map">Lihat di Map</string>
 
-    <string name="info1">Barang bekas yang dijual disekitarmu!</string>
+    <string name="info1">Sampah yang dijual disekitarmu!</string>
     <string name="sellername">Nama Penjual</string>
     <string name="selleraddress">Alamat Penjual</string>
     <string name="selldate">Tanggal Jual</string>
@@ -69,6 +69,9 @@
     <string name="total_item">Total Item</string>
     <string name="total_weight">Total Berat</string>
     <string name="price_label">Harga per Kg Sampah</string>
+    <string name="description_home_operator">Info! Anda Sebagai Operator Bisa Membeli Sampah</string>
+    <string name="buy_now">Beli Sekarang</string>
+    <string name="complete">Selesaikan</string>
 
     <string-array name="roles_array">
         <item>Pengepul</item>
