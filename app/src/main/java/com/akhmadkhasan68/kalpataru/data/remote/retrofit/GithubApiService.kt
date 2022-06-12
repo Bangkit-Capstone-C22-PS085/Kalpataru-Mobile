@@ -98,6 +98,14 @@ interface GithubApiService {
     fun getOperatorTransactionDetail(
         @Path("id") id: Int
     ) : Call<DetailTransactionResponse>
+
+    @FormUrlEncoded
+    @PUT("auth/update-address")
+    fun updateAddress(
+        @Field("long") lon: Float,
+        @Field("lat") lat: Float,
+        @Field("address") address: String
+    ):Call<MeResponse>
 //
 //    @FormUrlEncoded
 //    @POST("register")
