@@ -27,7 +27,7 @@ class HomeAdapter(private val listData : List<DataTransactions>) : RecyclerView.
         val tvSellDate: TextView = itemView.findViewById(R.id.tv_selldate)
         val tvTotalWeight: TextView = itemView.findViewById(R.id.tv_total_weight)
         val tvTotalItem: TextView = itemView.findViewById(R.id.tv_total_item)
-        val tvTotal: TextView = itemView.findViewById(R.id.tv_total)
+        val tvNominal: TextView = itemView.findViewById(R.id.tv_nominal)
     }
 
     override fun onCreateViewHolder(
@@ -45,7 +45,7 @@ class HomeAdapter(private val listData : List<DataTransactions>) : RecyclerView.
         holder.tvSellDate.text = member?.member?.address
         holder.tvTotalWeight.text = getTotalWeight(detail).toString()
         holder.tvTotalItem.text = detail?.size.toString()
-        holder.tvTotal.text = total
+        holder.tvNominal.text = total
         holder.itemView.setOnClickListener{onItemClickCallback.onItemClicked(listData[holder.adapterPosition])}
     }
 
