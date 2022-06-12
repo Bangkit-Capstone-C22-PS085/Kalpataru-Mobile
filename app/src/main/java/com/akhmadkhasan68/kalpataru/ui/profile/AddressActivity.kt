@@ -2,7 +2,6 @@ package com.akhmadkhasan68.kalpataru.ui.profile
 
 import android.Manifest
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -19,7 +18,6 @@ import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.databinding.ActivityAddressBinding
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.akhmadkhasan68.kalpataru.ui.ViewModelFactory
-import com.akhmadkhasan68.kalpataru.ui.register.RegisterActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -28,9 +26,6 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 class AddressActivity : AppCompatActivity(), OnMapReadyCallback {

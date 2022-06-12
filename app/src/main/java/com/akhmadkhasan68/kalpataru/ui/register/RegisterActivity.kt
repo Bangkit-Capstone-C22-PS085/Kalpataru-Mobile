@@ -2,7 +2,6 @@ package com.akhmadkhasan68.kalpataru.ui.register
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -10,6 +9,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.*
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.databinding.ActivityRegisterBinding
 import com.akhmadkhasan68.kalpataru.ui.login.LoginActivity

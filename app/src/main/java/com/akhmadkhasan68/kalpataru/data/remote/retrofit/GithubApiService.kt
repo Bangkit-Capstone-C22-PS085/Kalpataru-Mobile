@@ -1,8 +1,6 @@
 package com.akhmadkhasan68.kalpataru.data.remote.retrofit
 
 import com.akhmadkhasan68.kalpataru.data.remote.response.*
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 

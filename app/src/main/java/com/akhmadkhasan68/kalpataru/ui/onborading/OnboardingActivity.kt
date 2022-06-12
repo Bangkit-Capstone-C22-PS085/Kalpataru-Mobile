@@ -2,13 +2,12 @@ package com.akhmadkhasan68.kalpataru.ui.onborading
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.akhmadkhasan68.kalpataru.databinding.ActivityOnboardingBinding
 import com.akhmadkhasan68.kalpataru.ui.login.LoginActivity
-import com.akhmadkhasan68.kalpataru.ui.main.MainActivity
 
 class OnboardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnboardingBinding

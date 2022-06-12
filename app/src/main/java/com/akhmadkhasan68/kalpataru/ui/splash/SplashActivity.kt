@@ -2,11 +2,10 @@ package com.akhmadkhasan68.kalpataru.ui.splash
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -14,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.akhmadkhasan68.kalpataru.ui.ViewModelFactory
-import com.akhmadkhasan68.kalpataru.ui.login.LoginViewModel
 import com.akhmadkhasan68.kalpataru.ui.main.MainActivity
 import com.akhmadkhasan68.kalpataru.ui.onborading.OnboardingActivity
 

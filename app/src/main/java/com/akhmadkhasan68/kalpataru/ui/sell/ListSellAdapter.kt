@@ -7,9 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataCart
-import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataTransactions
-import kotlinx.coroutines.NonDisposableHandle
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class ListSellAdapter(private val listData : List<DataCart>) : RecyclerView.Adapter<ListSellAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback

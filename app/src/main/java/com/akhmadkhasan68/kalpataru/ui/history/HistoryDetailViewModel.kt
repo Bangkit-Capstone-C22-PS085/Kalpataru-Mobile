@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.akhmadkhasan68.kalpataru.data.remote.response.BuyResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.ErrorResponse
-import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataTransactions
 import com.akhmadkhasan68.kalpataru.data.remote.retrofit.GithubApiConfig
 import com.akhmadkhasan68.kalpataru.model.UserModel
 import com.akhmadkhasan68.kalpataru.model.UserPreference

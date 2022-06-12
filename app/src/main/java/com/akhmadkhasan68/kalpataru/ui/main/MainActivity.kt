@@ -3,10 +3,10 @@ package com.akhmadkhasan68.kalpataru.ui.main
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -21,7 +21,6 @@ import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.akhmadkhasan68.kalpataru.ui.ViewModelFactory
 import com.akhmadkhasan68.kalpataru.ui.camera.CameraActivity
 import com.akhmadkhasan68.kalpataru.ui.login.LoginActivity
-import com.akhmadkhasan68.kalpataru.ui.onborading.OnboardingActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")

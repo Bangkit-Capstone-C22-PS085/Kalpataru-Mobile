@@ -2,16 +2,17 @@ package com.akhmadkhasan68.kalpataru.ui.history
 
 import android.content.ContentValues
 import android.util.Log
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.akhmadkhasan68.kalpataru.data.remote.response.ErrorResponse
-import com.akhmadkhasan68.kalpataru.data.remote.response.LoginResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.TransactionResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataTransactions
 import com.akhmadkhasan68.kalpataru.data.remote.retrofit.GithubApiConfig
 import com.akhmadkhasan68.kalpataru.model.UserModel
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.google.gson.Gson
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

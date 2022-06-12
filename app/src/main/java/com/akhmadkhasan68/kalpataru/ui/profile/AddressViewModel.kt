@@ -1,15 +1,12 @@
 package com.akhmadkhasan68.kalpataru.ui.profile
 
 import android.content.ContentValues
-import android.content.Intent
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.akhmadkhasan68.kalpataru.data.remote.response.ErrorResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.MeResponse
-import com.akhmadkhasan68.kalpataru.data.remote.response.partials.User
 import com.akhmadkhasan68.kalpataru.data.remote.retrofit.GithubApiConfig
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.google.gson.Gson

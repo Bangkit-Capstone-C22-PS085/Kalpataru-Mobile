@@ -7,8 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.akhmadkhasan68.kalpataru.data.remote.response.BuyResponse
 import com.akhmadkhasan68.kalpataru.data.remote.response.ErrorResponse
-import com.akhmadkhasan68.kalpataru.data.remote.response.MeResponse
-import com.akhmadkhasan68.kalpataru.data.remote.response.partials.User
 import com.akhmadkhasan68.kalpataru.data.remote.retrofit.GithubApiConfig
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.google.gson.Gson

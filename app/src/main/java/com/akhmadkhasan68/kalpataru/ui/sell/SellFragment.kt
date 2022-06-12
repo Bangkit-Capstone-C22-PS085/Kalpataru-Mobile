@@ -3,7 +3,9 @@ package com.akhmadkhasan68.kalpataru.ui.sell
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -12,12 +14,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataCart
 import com.akhmadkhasan68.kalpataru.databinding.FragmentSellBinding
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.akhmadkhasan68.kalpataru.ui.ViewModelFactory
-import com.akhmadkhasan68.kalpataru.ui.history.HistoryFragment
 
 private val Context.dataStore by preferencesDataStore("settings")
 class SellFragment : Fragment() {

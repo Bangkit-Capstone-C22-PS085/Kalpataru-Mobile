@@ -4,11 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -21,8 +19,6 @@ import com.akhmadkhasan68.kalpataru.data.remote.response.partials.User
 import com.akhmadkhasan68.kalpataru.databinding.FragmentHomeBinding
 import com.akhmadkhasan68.kalpataru.model.UserPreference
 import com.akhmadkhasan68.kalpataru.ui.ViewModelFactory
-import com.akhmadkhasan68.kalpataru.ui.history.HistoryDetailActivity
-import com.akhmadkhasan68.kalpataru.ui.history.ListHistoryAdapter
 
 private val Context.dataStore by preferencesDataStore("settings")
 class HomeFragment : Fragment() {
@@ -30,8 +26,6 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var dataStore : DataStore<Preferences>
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -98,11 +92,13 @@ class HomeFragment : Fragment() {
     private fun setupView(it: User) {
         binding.tvAccount.text = it.username
 
-        if(it.type.toString() == "OPERATOR"){
+        if(it.type.toString() == "OPERATOR") {
             homeViewModel.getDataTransaction()
             binding.tvInfo1.visibility = View.VISIBLE
             binding.rvHome.visibility = View.VISIBLE
             binding.tvDescription.visibility = View.VISIBLE
+        } else {
+            binding.tvCsoon.visibility = View.VISIBLE
         }
     }
 

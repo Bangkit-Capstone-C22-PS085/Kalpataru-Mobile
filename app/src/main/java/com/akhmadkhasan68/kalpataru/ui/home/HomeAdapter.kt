@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.akhmadkhasan68.kalpataru.R
 import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DataTransactions
 import com.akhmadkhasan68.kalpataru.data.remote.response.partials.DetailTransaction
-import com.akhmadkhasan68.kalpataru.ui.history.ListHistoryAdapter
 
 class HomeAdapter(private val listData : List<DataTransactions>) : RecyclerView.Adapter<HomeAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
