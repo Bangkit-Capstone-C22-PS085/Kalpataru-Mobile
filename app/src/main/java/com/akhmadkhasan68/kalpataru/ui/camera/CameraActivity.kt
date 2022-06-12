@@ -7,6 +7,8 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
+import android.util.Log
 import android.util.Size
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -14,11 +16,15 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.akhmadkhasan68.kalpataru.databinding.ActivityCameraBinding
+import com.akhmadkhasan68.kalpataru.utils.convertToBase64
+import com.akhmadkhasan68.kalpataru.utils.createFile
+import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -105,6 +111,38 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun takePhoto() {
+        val imageCapture = imageCapture ?: return
+
+        val photoFile = createFile(application)
+
+        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
+        imageCapture.takePicture(
+            outputOptions,
+            ContextCompat.getMainExecutor(this),
+            object : ImageCapture.OnImageSavedCallback {
+                override fun onError(exc: ImageCaptureException) {
+                    Toast.makeText(
+                        this@CameraActivity,
+                        "Gagal mengambil gambar.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                    val base64 = convertToBase64(photoFile)
+                    val intent = Intent(this@CameraActivity, InsertActivity::class.java)
+                    intent.putExtra(InsertActivity.CAMERA_X_RESULT, 200)
+                    intent.putExtra(InsertActivity.PICTURE_RESULT, photoFile)
+                    intent.putExtra(InsertActivity.PICTURE_RESULT_BASE64, base64)
+                    intent.putExtra(
+                        InsertActivity.IS_BACK_CAMERA,
+                        cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA
+                    )
+                    startActivity(intent)
+                    finish()
+                }
+            }
+        )
     }
 
     private fun startCamera() {

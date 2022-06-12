@@ -17,39 +17,26 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <ImageView
-            android:id="@+id/img_seller"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:transitionName="avatar"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tv_selleraddress"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_sellername"
-            tools:srcCompat="@tools:sample/avatars" />
-
         <TextView
-            android:id="@+id/tv_sellername"
+            android:id="@+id/tv_trash_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="8dp"
             android:text="@string/trashname"
             android:textColor="@color/secondary"
             android:textStyle="bold"
-            card_view:layout_constraintStart_toEndOf="@+id/img_seller"
+            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_selleraddress"
+            android:id="@+id/tv_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:text="@string/trashweight"
             android:textSize="10sp"
-            card_view:layout_constraintStart_toEndOf="@+id/img_seller"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_sellername" />
+            card_view:layout_constraintStart_toStartOf="@+id/tv_trash_name"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_trash_name" />
 
         <View
             android:id="@+id/view"
@@ -59,12 +46,13 @@
             android:background="#000000"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_selleraddress" />
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_quantity" />
 
         <TextView
             android:id="@+id/tv_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
             android:text="@string/total"
             card_view:layout_constraintStart_toStartOf="parent"
@@ -75,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/nominal"
             android:textColor="@color/secondary"
             card_view:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +78,8 @@
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:srcCompat="@drawable/ic_baseline_more_vert_24"
-            card_view:tint="@color/secondary" />
+            card_view:tint="@color/secondary"
+            android:visibility="gone"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

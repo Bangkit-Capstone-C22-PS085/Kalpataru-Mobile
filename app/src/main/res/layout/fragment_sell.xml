@@ -61,6 +61,7 @@
 
     <ImageView
         android:id="@+id/btn_add"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
@@ -81,4 +82,19 @@
         app:layout_constraintBottom_toTopOf="@+id/rv_sell"
         app:layout_constraintStart_toStartOf="@+id/view4"
         app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".8"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_loop="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>

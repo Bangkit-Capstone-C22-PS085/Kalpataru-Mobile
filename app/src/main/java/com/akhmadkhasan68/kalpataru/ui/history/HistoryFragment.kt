@@ -54,11 +54,21 @@ class HistoryFragment : Fragment() {
         historyViewModel.data.observe(viewLifecycleOwner, {
             setHistoryData(it)
         })
+
+        historyViewModel.isLoading.observe(viewLifecycleOwner, { isLoading ->
+            showLoading(isLoading)
+        })
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if(isLoading){
+            binding.loading.visibility = View.VISIBLE
+        }else{
+            binding.loading.visibility = View.GONE
+        }
     }
 
     private fun setHistoryData(data: List<DataTransactions>) {
-//        binding.rvHistory.layoutManager = LinearLayoutManager(activity)
-
         if(data.isNotEmpty()){
             binding.rvHistory.visibility = View.VISIBLE
 

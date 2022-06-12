@@ -25,6 +25,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/openGallery"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toEndOf="@+id/switchCamera"
         app:srcCompat="@drawable/ic_baseline_photo_camera_24"
         app:tint="@color/secondary" />
@@ -49,6 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/captureImage"
         app:srcCompat="@drawable/ic_baseline_photo_camera_back_24"
-        app:tint="@color/secondary" />
+        app:tint="@color/secondary"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

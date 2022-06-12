@@ -38,9 +38,8 @@ interface GithubApiService {
         @Path("id") id: Int
     ) : Call<DetailTransactionResponse>
 
-    @FormUrlEncoded
     @POST("transactions")
-    fun createTransaction() : Call<MeResponse>
+    fun createTransaction() : Call<CreateTransactionResponse>
 
     //Cart
     @GET("cart")
@@ -57,7 +56,7 @@ interface GithubApiService {
         @Field("trashes_id") trashes_id : Int,
         @Field("quantity") quantity : Int,
         @Field("subtotal") subtotal : String
-    ) : Call<MeResponse>
+    ) : Call<CreateCartResponse>
 
     @FormUrlEncoded
     @PUT("cart/{id}")
@@ -78,7 +77,7 @@ interface GithubApiService {
     @POST("trash/get-price-prediction")
     fun getPredictionPrice(
         @Field("b64") b64 : String
-    ): Call<TrashResponse>
+    ): Call<TrashDetailResponse>
 
     //Operator
     @PUT("operator/transactions/buy/{id}")

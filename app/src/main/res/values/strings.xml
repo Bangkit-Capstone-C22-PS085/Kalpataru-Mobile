@@ -68,6 +68,7 @@
     <string name="balance">Total Balance</string>
     <string name="total_item">Total Item</string>
     <string name="total_weight">Total Berat</string>
+    <string name="price_label">Harga per Kg Sampah</string>
 
     <string-array name="roles_array">
         <item>Pengepul</item>

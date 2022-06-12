@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
 import android.os.Environment
+import android.util.Base64
 import com.akhmadkhasan68.kalpataru.R
 import java.io.*
 import java.text.SimpleDateFormat
@@ -78,6 +79,14 @@ fun uriToFile(selectedImg: Uri, context: Context): File {
     inputStream.close()
 
     return myFile
+}
+
+fun convertToBase64(file: File) : String {
+    val bitmap = BitmapFactory.decodeFile(file.path)
+    val stream = ByteArrayOutputStream()
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream)
+    val image = stream.toByteArray()
+    return Base64.encodeToString(image, Base64.DEFAULT)
 }
 
 fun reduceFileImage(file: File): File{
