@@ -8,6 +8,7 @@ import com.akhmadkhasan68.kalpataru.ui.history.HistoryViewModel
 import com.akhmadkhasan68.kalpataru.ui.home.HomeViewModel
 import com.akhmadkhasan68.kalpataru.ui.login.LoginViewModel
 import com.akhmadkhasan68.kalpataru.ui.main.MainViewModel
+import com.akhmadkhasan68.kalpataru.ui.profile.AddressViewModel
 import com.akhmadkhasan68.kalpataru.ui.profile.ProfileViewModel
 import com.akhmadkhasan68.kalpataru.ui.register.RegisterViewModel
 import com.akhmadkhasan68.kalpataru.ui.sell.SellViewModel
@@ -27,6 +28,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             }
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(AddressViewModel::class.java) -> {
+                AddressViewModel(pref) as T
             }
             modelClass.isAssignableFrom(HistoryViewModel::class.java) -> {
                 HistoryViewModel(pref) as T
